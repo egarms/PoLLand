@@ -3,5 +3,29 @@
 
     <string name="hello">Hello World, PoLLandActivity!</string>
     <string name="app_name">PoLLand</string>
+    <string name="poll_category_prompt">Category</string>
+    <string name="optionA">A)</string>
+    <string name="optionB">B)</string>
+    <string name="optionC">C)</string>
+    <string-array name="categories_array">
+        <item>Sports</item>
+        <item>Entertainment</item>
+        <item>Politics</item>
+        <item>Technology</item>
+        <item>Miscellaneous</item>
+    </string-array>
+    <string name="visibility_prompt">Visible to:</string>
+    <string-array name="visibility_array">
+    	<item>Everyone</item>
+    	<item>Friends only</item>
+    </string-array>
+    <string name="end_choice_prompt">Close poll on:</string>
+    <string-array name="end_choice_array">
+    	<item>Never</item>
+    	<item>After 1 day</item>
+    	<item>After 1 week</item>
+    	<item>Select a date:</item>
+    </string-array>
+    
 
 </resources>

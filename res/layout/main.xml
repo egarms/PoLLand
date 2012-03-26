@@ -3,10 +3,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
+<Button
+	android:id="@+id/next_button"
+	android:text="NEXT"
+	android:layout_gravity="center_horizontal"
+	android:layout_width="300dp" 
+	android:layout_height="wrap_content"
+	android:textSize="15sp" />
 </LinearLayout>

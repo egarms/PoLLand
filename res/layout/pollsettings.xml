@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Poll Preview" />
+    <TextView
+        android:id="@+id/question_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:background="#ff3333"
+        android:textColor="#ffffff"/>
+
+    <RadioGroup
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/answerChoices"
+    android:layout_gravity="center_horizontal"
+    android:background="#ff3333"
+    android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textAppearance="?android:attr/textAppearanceMedium" style="1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<RelativeLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_height="fill_parent"  
+    android:layout_width="fill_parent"> 
+    <TextView
+    android:id="@+id/visibility_text"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Visible to:"/>
+    <Spinner
+        android:id="@+id/visibility"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/visibility_text"
+        android:prompt="@string/visibility_prompt"/>
+    <TextView
+    android:id="@+id/end_choice_text"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_alignParentLeft="true"
+	android:layout_below="@+id/visibility"
+	android:text="Close poll on:"/>
+   <Spinner
+        android:id="@+id/end_choice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_toRightOf="@+id/end_choice_text"
+        android:layout_alignTop="@+id/end_choice_text"
+        android:prompt="@string/end_choice_prompt"/>
+
+   <Button
+       android:id="@+id/back_button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_alignRight="@+id/end_choice_text"
+       android:layout_below="@+id/end_choice"
+       android:text="BACK" />
+
+    <Button
+        android:id="@+id/create_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/back_button"
+        android:layout_toRightOf="@+id/end_choice_text"
+        android:text="CREATE POLL" />
+ 
+</RelativeLayout>  
+    
+</LinearLayout>
