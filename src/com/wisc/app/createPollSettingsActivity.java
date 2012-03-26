@@ -1,4 +1,5 @@
 package com.wisc.app;
+import java.util.Calendar;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -23,9 +24,9 @@ public class createPollSettingsActivity extends Activity{
 	String category;
 	String visibility;
 	String closePollChoice;
-	int endYear;
-	int endMonth;
-	int endDay;
+	private int endYear;
+	private int endMonth;
+	private int endDay;
 	static final int DATE_DIALOG_ID = 0;
 	Button createButton;
 	Button backButton;
@@ -101,6 +102,7 @@ public class createPollSettingsActivity extends Activity{
 			// Upon clicking the button, start ListViewActivity, 
 			// pass it the URL entered in the text box
 			public void onClick(View v) {
+				System.out.println(closePollChoice);
 				Intent i = new Intent(com.wisc.app.createPollSettingsActivity.this,
 						com.wisc.app.PollDisplayActivity.class);
 
@@ -146,12 +148,9 @@ public class createPollSettingsActivity extends Activity{
 				View view, int pos, long id) {
 			if(pos==3){
 				showDialog(DATE_DIALOG_ID);
-				endMonth++;
-				closePollChoice=""+endMonth+'/'+endDay+'/'+endYear+"";
 			}
 			else
 				closePollChoice = parent.getItemAtPosition(pos).toString();
-			System.out.println("closePollChoice");
 		}
 
 		public void onNothingSelected(AdapterView parent) {
@@ -168,17 +167,25 @@ public class createPollSettingsActivity extends Activity{
 			endYear = year;
 			endMonth = monthOfYear;
 			endDay = dayOfMonth;
+			endMonth++;
+			closePollChoice=""+endMonth+'/'+endDay+'/'+endYear+"";
 		}
 	};
 
-
+	
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
-		case DATE_DIALOG_ID:
+		case DATE_DIALOG_ID:{
+			// get the current date
+	        final Calendar c = Calendar.getInstance();
+	        int mYear = c.get(Calendar.YEAR);
+	        int mMonth = c.get(Calendar.MONTH);
+	        int mDay = c.get(Calendar.DAY_OF_MONTH);
+
 			return new DatePickerDialog(createPollSettingsActivity.this,
 					mDateSetListener,
-					endYear, endMonth, endDay);
-		}
+					mYear, mMonth, mDay);
+		}}
 		return null;
 	}
 }
